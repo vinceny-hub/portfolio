@@ -2,7 +2,9 @@
   <div id="app">
     <div class="container">
     <nav class="navbar1">
+       <li class="">
       <router-link to="/" class="">Accueil</router-link>
+       </li>
       <div class="">
         <li class="">
           <router-link to="/tutorials" class="nav-link">Blog</router-link>
@@ -12,6 +14,8 @@
         </li>
       </div>
     </nav>
+    <div class="boxX">
+    </div>
     <div class="box-1">
        <div class="title_bar">
          <div class="title_container">
@@ -28,13 +32,22 @@
       
       
       <div class="container2">
+       <router-link to="/" class="">
       <div class="window window-1"><p>Projet 1</p></div>
+      </router-link>
+        <a href="#" class="">
         <div class="window window-2"><p>Projet 2</p></div>
+        </a>
+         <a href="#" class="">
           <div class="window window-3"><p>Projet 3</p></div>
+          </a>
           </div>
     </div>
     <footer class="box-4">
     </footer>
+     <div class="container mt-3">
+      <router-view />
+    </div>
 
     </div>
   </div>
@@ -73,7 +86,7 @@ html, body {
   padding-top: 5vw;
   display: grid;
   grid-template-columns: 35vw ;
-  grid-template-rows: 15vw 15vw 15vw ;
+  grid-template-rows: 15vw 15vw 15vw 15vw ;
   grid-row-gap: 5vw;
 
   overflow: hidden;
@@ -106,7 +119,31 @@ html, body {
   grid-row: 1/2;
 
 }
+.boxX{
+  width: 20vw;
+  height: 12.36vw;
+  border: solid 1vw black;
+  background-color: yellow;
+  transform: translate(-5vw, 5vw);
+   animation-duration: 1.5s;
+  animation-timing-function: ease-out; 
+  animation-name: slideRL;
+}
+@keyframes slideRL {
+  from {
+    margin-left: 100vw;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0vw;
+    width: 100%;
+  }
+}
 .box-1{
+  border: 1vw solid black;
+  border-left: unset;
+    border-right: unset;
   position: relative;
   background-color:red;
   grid-column: 1/4;
@@ -116,7 +153,9 @@ html, body {
   animation-name: slideRL;
 }
 .box-2{
-  background-color:black;
+  border: 1vw solid black;
+  
+  background-color:darkblue;
   grid-column: 1/2;
   grid-row: 3/4;
   animation-duration: 1.5s;
@@ -125,6 +164,8 @@ html, body {
   animation-name: slideBT;
 }
 .box-3{
+  
+  border-right: 1vw solid black;;
   background-color:white;
   grid-column: 2/3;
   grid-row: 3/4;
@@ -136,11 +177,15 @@ html, body {
 @keyframes mainBT {
   from {
     margin-top: 100vw;
+    border-top: 1vw solid black;
    
   }
- 
+  99%{
+    border-top: 1vw solid black;
+  }
   to {
      margin-top: 0vw; 
+     /* border-top: unset; */
   
   }
 }
@@ -173,8 +218,9 @@ html, body {
 .window{
 /* font-size: 9vw; */
  /* perspective: 200px; */
- border: solid 0.5vw black;
- border-radius: 1vw;
+ border: solid 1vw black;
+ /* box-shadow: 1vw 1vw 1vw black; */
+ border-radius: 0.1vw;
   transform: perspective(0vw) rotateX(90deg);
   animation-duration: 2s;
   animation-delay: 3s; 
@@ -196,6 +242,7 @@ html, body {
  
   to {
       transform: rotate3d(0, 0, 0, 360deg);
+       background-color: #DCDCDC;
      /* margin-top: 0vw;  */
     
   
@@ -230,9 +277,10 @@ html, body {
   height: 10vw;
 }
 .title_name{
-  margin-top: 1vw; 
+  margin-top: 0vw; 
   color: black;
   font-size: 5vw;
+  text-shadow: .1vw .1vw .5vw black;
   
   animation-duration: 3s;
   animation-timing-function: ease-in-out; 
@@ -255,6 +303,7 @@ html, body {
   color: white;
   margin-top: -4.5vw;
   font-size: 2.5vw;
+  text-shadow:5px 5px 10px black;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-name: slideLR;
@@ -282,7 +331,7 @@ html, body {
 
   /* width: 20vw;
   height: 100vw; */
-  background-color:black;
+  background-color:blue;
   /* animation-duration: 1.5s;
   animation-timing-function: ease-out;
    animation-fill-mode: forwards; 
